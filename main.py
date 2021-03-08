@@ -1,14 +1,14 @@
-print("A Termux StringSession generator")
+print("A Termux StringSession generator. ©https://t.me/imjerin")
 
-print("p ==> Pyrogram (docs.pyrogram.org)")
+print("p => Pyrogram (docs.pyrogram.org)")
 
-print("t ==> Telethon (docs.telethon.dev)")
+print("t => Telethon (docs.telethon.dev)")
 
 print("Select your required option: ")
 s_l = input("enter p / t ? ?? ")
 
 if s_l == "p":
-  print("you selected Pyrogram")
+  print("Pyrogram was selected")
   APP_ID = int(input("Enter APP ID here: "))
   API_HASH = input("Enter API HASH here: ")
   import pyrogram
@@ -20,10 +20,10 @@ if s_l == "p":
     session_str = app.export_session_string()
     s_m = app.send_message("me", session_str)
     s_m.reply_text("⬆️ This StringSession is generated using https://github.com/jerinjohny-ktnm/Session-Generator \nThrough Termux app. ", quote=True)
-    print("please check your Telegram Saved Messages for the StringSession ")
+    print("Please check your Telegram Saved Messages for the StringSession ")
 
 elif s_l == "t":
-  print("you selected Telethon")
+  print("Telethon was selected")
   # (c) https://t.me/TelethonChat/37677
   from telethon.sync import TelegramClient
   from telethon.sessions import StringSession
@@ -37,7 +37,7 @@ elif s_l == "t":
     session_str = client.session.save()
     s_m = client.send_message("me", session_str)
     s_m.reply("⬆️ This StringSession is generated using https://github.com/jerinjohny-ktnm/Session-Generator!")
-    print("please check your Telegram Saved Messages for the StringSession ")
+    print("Please check your Telegram Saved Messages for the StringSession ")
 
 else:
   print("?? please select only p / t, ")
